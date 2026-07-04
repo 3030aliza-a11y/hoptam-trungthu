@@ -266,6 +266,44 @@
   footer ul{list-style:none;padding:0;margin:0;}
   footer .desc{max-width:320px;opacity:.7;}
   .footer-bottom{border-top:1px solid rgba(212,175,55,.15);padding-top:20px;text-align:center;font-size:12.5px;opacity:.55;}
+
+  /* ---------- Chat widget ---------- */
+  .chat-fab{
+    position:fixed;right:22px;bottom:22px;z-index:100;width:58px;height:58px;border-radius:50%;
+    background:linear-gradient(180deg,var(--red-600),var(--red-700));border:2px solid var(--gold-500);
+    box-shadow:0 10px 24px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;
+    cursor:pointer;font-size:26px;color:#fff;
+  }
+  .chat-fab:hover{filter:brightness(1.08);}
+  .chat-panel{
+    position:fixed;right:22px;bottom:92px;z-index:100;width:320px;max-width:calc(100vw - 44px);
+    background:var(--cream-50);border-radius:16px;overflow:hidden;
+    box-shadow:0 16px 40px rgba(0,0,0,.35);border:1px solid rgba(212,175,55,.4);
+    display:none;flex-direction:column;
+  }
+  .chat-panel.open{display:flex;}
+  .chat-head{background:linear-gradient(180deg,var(--navy-900),var(--navy-950));color:#fff;padding:14px 16px;display:flex;align-items:center;gap:10px;}
+  .chat-head .dot{width:9px;height:9px;border-radius:50%;background:#4ade80;flex:none;}
+  .chat-head b{font-family:Georgia,serif;font-size:14.5px;color:var(--gold-300);display:block;}
+  .chat-head span{font-size:11.5px;opacity:.75;}
+  .chat-close{margin-left:auto;background:none;border:none;color:var(--gold-300);font-size:18px;cursor:pointer;line-height:1;}
+  .chat-body{padding:14px 16px;max-height:280px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;}
+  .chat-msg{background:#fff;border-radius:10px;padding:9px 12px;font-size:13px;line-height:1.5;color:var(--ink-700);
+    box-shadow:0 2px 6px rgba(58,47,34,.08);max-width:88%;}
+  .chat-msg.bot{align-self:flex-start;}
+  .chat-msg.user{align-self:flex-end;background:var(--navy-900);color:#fff;}
+  .chat-quick{display:flex;flex-direction:column;gap:8px;padding:0 16px 14px;}
+  .chat-quick button{
+    text-align:left;background:#fff;border:1px solid rgba(138,74,36,.2);border-radius:10px;padding:9px 12px;
+    font-size:12.5px;color:var(--ink-700);cursor:pointer;
+  }
+  .chat-quick button:hover{border-color:var(--gold-500);background:var(--cream-100);}
+  .chat-foot{display:flex;gap:8px;padding:12px 16px;border-top:1px solid rgba(138,74,36,.12);background:var(--cream-100);}
+  .chat-foot a{
+    flex:1;text-align:center;padding:9px 8px;border-radius:999px;font-size:12px;font-weight:700;
+  }
+  .chat-foot .zalo{background:#0068ff;color:#fff;}
+  .chat-foot .phone{background:var(--navy-900);color:var(--gold-300);}
 </style>
 </head>
 <body>
@@ -280,7 +318,7 @@
           <path d="M50,88 C22,64 6,45 6,28 C6,12 20,2 32,9 C40,14 46,21 50,29 C54,21 60,14 68,9 C80,2 94,12 94,28 C94,45 78,64 50,88 Z" fill="#e8c766"/>
         </svg>
       </div>
-      <div class="ht-logo-text"><b>HỢP TÂM</b><small>QUÀ TẶNG TRUNG THU</small></div>
+      <div class="ht-logo-text"><b>HỢP TÂM</b><small>MOONCAKE DISTRIBUTOR</small></div>
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Mở menu">☰</button>
     <div class="nav-links" id="navLinks">
@@ -527,7 +565,7 @@
           <path d="M50,88 C22,64 6,45 6,28 C6,12 20,2 32,9 C40,14 46,21 50,29 C54,21 60,14 68,9 C80,2 94,12 94,28 C94,45 78,64 50,88 Z" fill="#e8c766"/>
         </svg>
       </div>
-        <div class="ht-logo-text"><b>HỢP TÂM</b><small>QUÀ TẶNG TRUNG THU</small></div>
+        <div class="ht-logo-text"><b>HỢP TÂM</b><small>MOONCAKE DISTRIBUTOR</small></div>
       </div>
       <p class="desc">Trao trọn thành ý, gắn kết bền lâu — HỢP TÂM đồng hành cùng doanh nghiệp trong mỗi mùa Trung Thu.</p>
     </div>
@@ -552,6 +590,27 @@
   <div class="wrap footer-bottom">© 2026 HỢP TÂM. Bảo lưu mọi quyền.</div>
 </footer>
 
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-head">
+    <span class="dot"></span>
+    <div><b>HỢP TÂM Assistant</b><span>Thường trả lời trong vài phút</span></div>
+    <button class="chat-close" id="chatClose" aria-label="Đóng chat">✕</button>
+  </div>
+  <div class="chat-body" id="chatBody">
+    <div class="chat-msg bot">Xin chào 👋 Em là trợ lý HỢP TÂM. Anh/chị cần hỗ trợ gì về quà tặng Trung Thu doanh nghiệp ạ?</div>
+  </div>
+  <div class="chat-quick" id="chatQuick">
+    <button data-q="brands">Xem 3 thương hiệu bánh</button>
+    <button data-q="logo">Chính sách in logo doanh nghiệp</button>
+    <button data-q="quote">Yêu cầu báo giá theo số lượng</button>
+  </div>
+  <div class="chat-foot">
+    <a class="zalo" href="https://zalo.me/0909xxxxxx" target="_blank" rel="noopener">Chat Zalo</a>
+    <a class="phone" href="tel:0909xxxxxx">Gọi Hotline</a>
+  </div>
+</div>
+<div class="chat-fab" id="chatFab" aria-label="Mở chat tư vấn">💬</div>
+
 <script>
   document.getElementById('navToggle').addEventListener('click', function () {
     document.getElementById('navLinks').classList.toggle('open');
@@ -564,6 +623,35 @@
     document.getElementById('formMsg').classList.add('show');
     this.reset();
   });
+
+  (function () {
+    var panel = document.getElementById('chatPanel');
+    var fab = document.getElementById('chatFab');
+    var body = document.getElementById('chatBody');
+    var replies = {
+      brands: 'HỢP TÂM phân phối 3 thương hiệu: Givral (since 1950), KIDO\'s Bakery (Premium Mooncake) và Thọ Phát. Mời anh/chị xem chi tiết ở mục "Thương hiệu" phía trên trang.',
+      logo: 'HỢP TÂM nhận in LOGO doanh nghiệp lên mặt bánh và lên hộp quà — giúp món quà mang đậm dấu ấn thương hiệu của công ty anh/chị.',
+      quote: 'Dạ, anh/chị vui lòng để lại số lượng dự kiến và nhu cầu (đối tác/khách hàng/nhân viên) ở form "Gửi yêu cầu báo giá" bên dưới, đội ngũ sẽ phản hồi trong 24 giờ ạ.'
+    };
+    function addMsg(text, who) {
+      var div = document.createElement('div');
+      div.className = 'chat-msg ' + who;
+      div.textContent = text;
+      body.appendChild(div);
+      body.scrollTop = body.scrollHeight;
+    }
+    fab.addEventListener('click', function () { panel.classList.toggle('open'); });
+    document.getElementById('chatClose').addEventListener('click', function () { panel.classList.remove('open'); });
+    document.getElementById('chatQuick').addEventListener('click', function (e) {
+      var btn = e.target.closest('button[data-q]');
+      if (!btn) return;
+      addMsg(btn.textContent, 'user');
+      setTimeout(function () { addMsg(replies[btn.dataset.q], 'bot'); }, 350);
+      if (btn.dataset.q === 'quote') {
+        document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  })();
 </script>
 
 </body>
