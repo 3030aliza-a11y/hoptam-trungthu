@@ -118,10 +118,11 @@
 
   .hero-cake-wrap{display:flex;align-items:center;justify-content:center;position:relative;}
   .hero-photo{
-    width:100%;max-width:420px;border-radius:20px;overflow:hidden;
+    width:100%;max-width:420px;height:460px;border-radius:20px;overflow:hidden;
     box-shadow:0 0 0 6px rgba(212,175,55,.18), 0 25px 60px rgba(0,0,0,.45);
     position:relative;z-index:2;
   }
+  @media (max-width:900px){.hero-photo{height:380px;}}
   .hero-photo img{width:100%;height:100%;object-fit:cover;display:block;}
   .lantern{position:absolute;width:46px;height:60px;opacity:.9;}
   .lantern .body{width:100%;height:70%;border-radius:14px;background:linear-gradient(180deg,#e8503f,#a4231a);box-shadow:0 0 18px rgba(232,80,63,.55);}
@@ -197,10 +198,16 @@
   @media (max-width:900px){.b2b-grid{grid-template-columns:1fr;}}
   .b2b-card{
     background:rgba(255,255,255,.06);border:1px solid rgba(232,199,102,.35);border-radius:16px;
-    padding:26px 22px;text-align:center;
+    text-align:center;overflow:hidden;
   }
-  .b2b-icon{width:52px;height:52px;border-radius:50%;margin:0 auto 14px;background:linear-gradient(180deg,var(--gold-300),var(--gold-500));
-    display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--navy-950);}
+  .b2b-photo{width:100%;height:150px;overflow:hidden;}
+  .b2b-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .b2b-body{padding:22px 22px 26px;position:relative;}
+  .b2b-icon{
+    width:52px;height:52px;border-radius:50%;margin:-40px auto 14px;background:linear-gradient(180deg,var(--gold-300),var(--gold-500));
+    display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--navy-950);
+    box-shadow:0 4px 12px rgba(0,0,0,.35);border:3px solid var(--terracotta-700);position:relative;z-index:2;
+  }
   .b2b-card h3{font-family:Georgia,serif;font-size:18px;color:var(--gold-300);margin:0 0 8px;}
   .b2b-card p{font-size:13px;opacity:.85;line-height:1.6;margin:0;}
   .b2b-policy{
@@ -435,19 +442,28 @@
     </div>
     <div class="b2b-grid">
       <div class="b2b-card">
-        <div class="b2b-icon">🤝</div>
-        <h3>Quà tặng Đối tác</h3>
-        <p>Gắn kết mối quan hệ hợp tác lâu dài qua những hộp quà trang trọng, đúng chuẩn nghi lễ doanh nghiệp.</p>
+        <div class="b2b-photo"><img src="img/b2b-doitac.jpg" alt="Quà tặng Đối tác" /></div>
+        <div class="b2b-body">
+          <div class="b2b-icon">🤝</div>
+          <h3>Quà tặng Đối tác</h3>
+          <p>Gắn kết mối quan hệ hợp tác lâu dài qua những hộp quà trang trọng, đúng chuẩn nghi lễ doanh nghiệp.</p>
+        </div>
       </div>
       <div class="b2b-card">
-        <div class="b2b-icon">💼</div>
-        <h3>Quà tặng Khách hàng</h3>
-        <p>Tri ân khách hàng thân thiết, nâng cao trải nghiệm thương hiệu qua mùa lễ đoàn viên.</p>
+        <div class="b2b-photo"><img src="img/b2b-khachhang.jpg" alt="Quà tặng Khách hàng" /></div>
+        <div class="b2b-body">
+          <div class="b2b-icon">💼</div>
+          <h3>Quà tặng Khách hàng</h3>
+          <p>Tri ân khách hàng thân thiết, nâng cao trải nghiệm thương hiệu qua mùa lễ đoàn viên.</p>
+        </div>
       </div>
       <div class="b2b-card">
-        <div class="b2b-icon">👥</div>
-        <h3>Quà tặng Nhân viên</h3>
-        <p>Lan tỏa yêu thương nội bộ, thể hiện sự quan tâm của doanh nghiệp đến từng thành viên.</p>
+        <div class="b2b-photo"><img src="img/b2b-nhanvien.jpg" alt="Quà tặng Nhân viên" /></div>
+        <div class="b2b-body">
+          <div class="b2b-icon">👥</div>
+          <h3>Quà tặng Nhân viên</h3>
+          <p>Lan tỏa yêu thương nội bộ, thể hiện sự quan tâm của doanh nghiệp đến từng thành viên.</p>
+        </div>
       </div>
     </div>
     <div class="b2b-policy">
