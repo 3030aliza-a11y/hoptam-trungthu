@@ -201,18 +201,14 @@
   .b2b-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:34px;}
   @media (max-width:900px){.b2b-grid{grid-template-columns:1fr;}}
   .b2b-card{
-    background:rgba(255,255,255,.06);border:1px solid rgba(232,199,102,.35);border-radius:16px;
-    text-align:center;overflow:hidden;
+    display:block;background:rgba(255,255,255,.06);border:1px solid rgba(232,199,102,.35);border-radius:16px;
+    text-align:center;overflow:hidden;transition:transform .2s,background .2s;
   }
-  .b2b-photo{width:100%;height:170px;overflow:hidden;position:relative;}
-  .b2b-photo img{width:100%;height:100%;object-fit:cover;display:block;}
-  .b2b-photo::after{
-    content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg, rgba(110,58,23,0) 55%, rgba(110,58,23,.9) 100%);
-  }
-  .b2b-body{padding:16px 22px 26px;position:relative;}
-  .b2b-card h3{font-family:Georgia,serif;font-size:18px;color:var(--gold-300);margin:0 0 8px;}
-  .b2b-card p{font-size:13px;opacity:.85;line-height:1.6;margin:0;}
+  .b2b-card:hover{transform:translateY(-3px);background:rgba(255,255,255,.1);}
+  .b2b-body{padding:30px 24px 28px;position:relative;}
+  .b2b-card h3{font-family:Georgia,serif;font-size:19px;color:var(--gold-300);margin:0 0 10px;}
+  .b2b-card p{font-size:13.5px;opacity:.85;line-height:1.6;margin:0 0 16px;}
+  .b2b-more{font-size:12.5px;font-weight:700;color:var(--gold-400);letter-spacing:.3px;}
   .b2b-policy{
     background:rgba(15,27,51,.35);border:1px solid var(--gold-500);border-radius:16px;
     padding:26px 30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;justify-content:space-between;
@@ -440,31 +436,31 @@
   <div class="wrap">
     <div class="sec-head">
       <div class="sec-tag" style="color:var(--gold-400)">Giải pháp Quà tặng</div>
-      <h2 style="color:#fff">Quà tặng Trung Thu cho doanh nghiệp</h2>
-      <p style="color:var(--cream-100);opacity:.85">HỢP TÂM đồng hành cùng doanh nghiệp xây dựng chiến lược quà tặng phù hợp cho từng đối tượng.</p>
+      <h2 style="color:#fff">Quà tặng Trung Thu dành cho doanh nghiệp</h2>
+      <p style="color:var(--cream-100);opacity:.85">HỢP TÂM đồng hành cùng doanh nghiệp lựa chọn những giải pháp quà tặng phù hợp với từng đối tượng, góp phần truyền tải sự tri ân, xây dựng mối quan hệ bền vững và nâng tầm giá trị thương hiệu.</p>
     </div>
     <div class="b2b-grid">
-      <div class="b2b-card">
-        <div class="b2b-photo"><img src="img/b2b-doitac.jpg" alt="Quà tặng Đối tác" /></div>
+      <a href="qua-tang-doi-tac.html" class="b2b-card">
         <div class="b2b-body">
-          <h3>Quà tặng Đối tác</h3>
-          <p>Gắn kết mối quan hệ hợp tác lâu dài qua những hộp quà trang trọng, đúng chuẩn nghi lễ doanh nghiệp.</p>
+          <h3>🎁 Quà tặng đối tác</h3>
+          <p>Sang trọng, đẳng cấp, thể hiện sự trân trọng.</p>
+          <span class="b2b-more">Xem chi tiết →</span>
         </div>
-      </div>
-      <div class="b2b-card">
-        <div class="b2b-photo"><img src="img/b2b-khachhang.jpg" alt="Quà tặng Khách hàng" /></div>
+      </a>
+      <a href="qua-tang-khach-hang.html" class="b2b-card">
         <div class="b2b-body">
-          <h3>Quà tặng Khách hàng</h3>
-          <p>Tri ân khách hàng thân thiết, nâng cao trải nghiệm thương hiệu qua mùa lễ đoàn viên.</p>
+          <h3>🤝 Quà tặng khách hàng</h3>
+          <p>Tinh tế, ý nghĩa, gia tăng sự gắn kết.</p>
+          <span class="b2b-more">Xem chi tiết →</span>
         </div>
-      </div>
-      <div class="b2b-card">
-        <div class="b2b-photo"><img src="img/b2b-nhanvien.jpg" alt="Quà tặng Nhân viên" /></div>
+      </a>
+      <a href="qua-tang-nhan-vien.html" class="b2b-card">
         <div class="b2b-body">
-          <h3>Quà tặng Nhân viên</h3>
-          <p>Lan tỏa yêu thương nội bộ, thể hiện sự quan tâm của doanh nghiệp đến từng thành viên.</p>
+          <h3>💙 Quà tặng nhân viên</h3>
+          <p>Quan tâm chân thành, lan tỏa tinh thần đoàn viên.</p>
+          <span class="b2b-more">Xem chi tiết →</span>
         </div>
-      </div>
+      </a>
     </div>
     <div class="b2b-policy">
       <div class="txt">

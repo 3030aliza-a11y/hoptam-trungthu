@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Quà tặng Nhân viên — HỢP TÂM</title>
+<meta name="description" content="Giải pháp quà tặng Trung Thu ấm áp, ý nghĩa dành tặng nhân viên — HỢP TÂM." />
+<style>
+  :root{
+    --navy-950:#0f1b33; --navy-900:#14213d; --gold-500:#d4af37; --gold-400:#e8c766; --gold-300:#f3dda0;
+    --red-600:#a4231a; --red-700:#7e1a13; --cream-50:#faf6ef; --cream-100:#f3ead9;
+    --terracotta-700:#8a4a24; --ink-700:#3a2f22; --ink-500:#6b5c46;
+    font-size:16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif;color:var(--ink-700);background:var(--cream-50);-webkit-font-smoothing:antialiased;}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px;}
+  .ht-logo{display:flex;align-items:center;gap:12px;}
+  .ht-logo-chip{background:var(--cream-50);border-radius:9px;padding:6px 12px;display:flex;align-items:center;flex:none;box-shadow:0 2px 8px rgba(0,0,0,.18);}
+  .ht-logo-chip img{height:24px;width:auto;display:block;}
+  .ht-logo-caption{font-size:9.5px;letter-spacing:2px;color:var(--gold-300);opacity:.9;}
+  .nav{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,var(--navy-900),var(--navy-950));border-bottom:1px solid rgba(212,175,55,.25);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1160px;margin:0 auto;}
+  .back-link{color:var(--gold-300);font-size:14px;display:flex;align-items:center;gap:6px;}
+  .back-link:hover{color:var(--gold-400);}
+  .nav-cta{background:linear-gradient(180deg,var(--red-600),var(--red-700));color:#fff;padding:10px 20px;border-radius:999px;font-size:14px;font-weight:600;box-shadow:0 4px 14px rgba(164,35,26,.4);border:1px solid rgba(212,175,55,.5);white-space:nowrap;}
+
+  .hero{position:relative;background:linear-gradient(180deg,var(--navy-900),var(--navy-950));color:#fff;padding:56px 0 0;}
+  .hero-inner{display:grid;grid-template-columns:1fr;gap:20px;}
+  .kicker{display:inline-block;background:rgba(212,175,55,.14);border:1px solid rgba(212,175,55,.45);color:var(--gold-400);padding:7px 16px;border-radius:999px;font-size:13px;letter-spacing:1.5px;margin-bottom:16px;}
+  .hero h1{font-family:Georgia,serif;font-size:36px;line-height:1.25;margin:0 0 14px;}
+  .hero p.lead{font-size:16px;line-height:1.7;opacity:.85;max-width:640px;margin:0 0 30px;}
+  .hero-photo{width:100%;height:320px;border-radius:16px 16px 0 0;overflow:hidden;margin-top:10px;}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+
+  section{padding:60px 0;}
+  .sec-tag{color:var(--red-600);font-size:13px;letter-spacing:2px;font-weight:700;text-transform:uppercase;}
+  h2{font-family:Georgia,serif;font-size:27px;color:var(--navy-900);margin:10px 0 16px;}
+  p{font-size:15px;line-height:1.8;color:var(--ink-500);margin:0 0 16px;}
+  .suggest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px;}
+  @media (max-width:800px){.suggest-grid{grid-template-columns:1fr;}}
+  .suggest-card{background:#fff;border-radius:14px;padding:22px 20px;border:1px solid rgba(138,74,36,.1);box-shadow:0 6px 16px rgba(58,47,34,.06);}
+  .suggest-card b{display:block;font-family:Georgia,serif;font-size:16px;color:var(--navy-900);margin-bottom:6px;}
+  .suggest-card span{font-size:11.5px;color:var(--red-600);letter-spacing:.5px;}
+  .suggest-card p{font-size:13px;margin:10px 0 0;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 28px;border-radius:999px;font-size:15px;font-weight:600;cursor:pointer;border:none;
+    background:linear-gradient(180deg,var(--red-600),var(--red-700));color:#fff;box-shadow:0 8px 20px rgba(164,35,26,.4);border:1px solid rgba(212,175,55,.5);}
+  .cta-band{background:linear-gradient(180deg,var(--terracotta-700),#6e3a1c);color:#fff;text-align:center;padding:56px 0;}
+  .cta-band h2{color:#fff;}
+  .cta-band p{color:var(--cream-100);opacity:.85;max-width:560px;margin-left:auto;margin-right:auto;}
+  footer{background:var(--navy-950);color:var(--cream-100);padding:32px 0;text-align:center;font-size:12.5px;opacity:.6;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="ht-logo">
+      <div class="ht-logo-chip"><img src="img/hoptam-logo.png" alt="HỢP TÂM" /></div>
+      <div class="ht-logo-caption">MOONCAKE<br>DISTRIBUTOR</div>
+    </a>
+    <a href="index.html" class="back-link">← Về trang chủ</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <div class="kicker">GIẢI PHÁP QUÀ TẶNG</div>
+      <h1>💙 Quà tặng Nhân viên</h1>
+      <p class="lead">Quan tâm chân thành, lan tỏa tinh thần đoàn viên — món quà nhỏ gửi gắm lời cảm ơn đến từng thành viên trong công ty.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="hero-photo"><img src="img/b2b-nhanvien.jpg" alt="💙 Quà tặng Nhân viên" /></div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-tag">Vì sao chọn nhóm quà này</div>
+    <h2>Lan tỏa yêu thương nội bộ</h2>
+    <p>Quà Trung Thu cho nhân viên là dịp để doanh nghiệp thể hiện sự quan tâm chân thành, góp phần xây dựng văn hóa gắn kết nội bộ. HỢP TÂM gợi ý các dòng bánh phổ thông, giá hợp lý cho số lượng lớn nhưng vẫn đảm bảo chất lượng và hương vị ấm cúng ngày đoàn viên.</p>
+    <div class="sec-tag" style="margin-top:40px;display:block;">Gợi ý nhóm sản phẩm phù hợp</div>
+    <h2>Đa dạng lựa chọn từ 3 thương hiệu</h2>
+    <div class="suggest-grid">
+            <div class="suggest-card">
+        <span>SINCE 1950</span>
+        <b>Givral</b>
+        <p><b style="color:var(--red-600);">Hộp 4 bánh nhỏ</b><br>Kích cỡ gọn, giá hợp lý cho số lượng lớn.</p>
+      </div>
+      <div class="suggest-card">
+        <span>PREMIUM MOONCAKE</span>
+        <b>KIDO's Bakery</b>
+        <p><b style="color:var(--red-600);">Mỹ Vị Lava &amp; An Khang</b><br>Hương vị mới lạ, hộp nhỏ gọn, dễ phát cho toàn thể nhân viên.</p>
+      </div>
+      <div class="suggest-card">
+        <span>HƯƠNG VỊ TRUYỀN THỐNG</span>
+        <b>Thọ Phát</b>
+        <p><b style="color:var(--red-600);">Bánh dẻo &amp; bánh nướng thập cẩm</b><br>Hương vị truyền thống quen thuộc, ấm cúng.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="wrap">
+    <h2>Nhận tư vấn &amp; báo giá cho nhân viên</h2>
+    <p>Để lại số lượng và yêu cầu, đội ngũ HỢP TÂM sẽ liên hệ tư vấn giải pháp quà tặng phù hợp trong vòng 24 giờ.</p>
+    <a href="index.html#order" class="btn">Gửi yêu cầu báo giá</a>
+  </div>
+</div>
+
+<footer>© 2026 HỢP TÂM. Bảo lưu mọi quyền.</footer>
+
+</body>
+</html>
