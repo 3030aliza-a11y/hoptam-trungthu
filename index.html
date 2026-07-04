@@ -117,6 +117,12 @@
   .btn-dark{background:var(--navy-900);color:var(--gold-300);border:1px solid rgba(212,175,55,.4);}
 
   .hero-cake-wrap{display:flex;align-items:center;justify-content:center;position:relative;}
+  .hero-photo{
+    width:100%;max-width:420px;border-radius:20px;overflow:hidden;
+    box-shadow:0 0 0 6px rgba(212,175,55,.18), 0 25px 60px rgba(0,0,0,.45);
+    position:relative;z-index:2;
+  }
+  .hero-photo img{width:100%;height:100%;object-fit:cover;display:block;}
   .lantern{position:absolute;width:46px;height:60px;opacity:.9;}
   .lantern .body{width:100%;height:70%;border-radius:14px;background:linear-gradient(180deg,#e8503f,#a4231a);box-shadow:0 0 18px rgba(232,80,63,.55);}
   .lantern .top,.lantern .bottom{width:60%;height:5px;background:var(--gold-400);margin:0 auto;border-radius:2px;}
@@ -344,9 +350,9 @@
       </div>
     </div>
     <div class="hero-cake-wrap">
-      <div class="lantern lantern-l"><div class="string"></div><div class="top"></div><div class="body"></div><div class="bottom"></div></div>
-      <div class="mooncake"></div>
-      <div class="lantern lantern-r"><div class="string"></div><div class="top"></div><div class="body"></div><div class="bottom"></div></div>
+      <div class="hero-photo">
+        <img src="img/hero-giftbox.jpg" alt="Hộp quà bánh Trung Thu cao cấp HỢP TÂM" />
+      </div>
     </div>
   </div>
 </header>
