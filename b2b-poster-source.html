@@ -32,32 +32,33 @@
     background:radial-gradient(circle at 35% 35%, #fff6dc 0%, var(--gold-400) 40%, rgba(212,175,55,0) 72%);
     opacity:.9;
   }
-  .brand{display:flex;align-items:center;gap:12px;position:relative;z-index:2;margin-bottom:26px;}
-  .seal{
-    width:46px;height:46px;border-radius:50%;
-    background:radial-gradient(circle at 35% 30%, var(--red-600), var(--red-700));
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 0 0 2px var(--gold-500) inset;flex:none;
-  }
-  .seal span{font-family:Georgia,serif;font-weight:700;color:var(--gold-300);font-size:18px;}
+  .brand{display:flex;align-items:center;gap:12px;position:relative;z-index:2;margin-bottom:18px;}
+  .seal{width:44px;height:44px;flex:none;}
+  .seal svg{width:100%;height:100%;}
   .brand b{display:block;font-family:Georgia,serif;font-size:24px;letter-spacing:2px;
     background:linear-gradient(180deg,var(--gold-300),var(--gold-500));-webkit-background-clip:text;background-clip:text;color:transparent;}
   .brand small{display:block;font-size:11px;letter-spacing:3px;color:var(--gold-300);opacity:.85;}
 
+  .slogan{position:relative;z-index:2;font-family:Georgia,serif;font-size:14px;letter-spacing:2px;color:var(--gold-400);margin-bottom:14px;}
   .kicker{position:relative;z-index:2;display:inline-block;background:rgba(212,175,55,.14);border:1px solid rgba(212,175,55,.45);
     color:var(--gold-400);padding:7px 18px;border-radius:999px;font-size:14px;letter-spacing:1.5px;margin-bottom:16px;}
-  .head h1{position:relative;z-index:2;font-family:Georgia,serif;font-size:46px;line-height:1.22;color:#fff;margin-bottom:12px;max-width:760px;}
+  .head h1{position:relative;z-index:2;font-family:Georgia,serif;font-size:44px;line-height:1.22;color:#fff;margin-bottom:12px;max-width:760px;}
   .head h1 em{font-style:normal;background:linear-gradient(180deg,var(--gold-300),var(--gold-500));
     -webkit-background-clip:text;background-clip:text;color:transparent;}
-  .head p{position:relative;z-index:2;font-size:16.5px;line-height:1.6;color:var(--cream-100);opacity:.9;max-width:620px;}
+  .head p{position:relative;z-index:2;font-size:16px;line-height:1.6;color:var(--cream-100);opacity:.9;max-width:620px;}
 
   .head .mooncake-deco{position:absolute;right:50px;bottom:-40px;width:150px;height:150px;border-radius:50%;
     background:repeating-conic-gradient(from 0deg,#d99a3d 0deg 15deg,#c9812c 15deg 30deg);
     box-shadow:0 14px 30px rgba(0,0,0,.35);z-index:1;}
   .head .mooncake-deco::before{content:"";position:absolute;inset:10px;border-radius:50%;
     background:radial-gradient(circle at 40% 35%, #e7ae57, #c9812c 60%, #a8641d 100%);}
-  .head .mooncake-deco::after{content:"喜";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    font-size:34px;color:rgba(255,247,225,.85);font-family:Georgia,serif;font-weight:700;}
+  .head .mooncake-deco::after{content:"H";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-size:36px;color:rgba(255,247,225,.9);font-family:Georgia,serif;font-weight:700;}
+
+  /* ---- Brand strip ---- */
+  .brand-strip{flex:none;background:var(--navy-950);padding:16px 56px;display:flex;align-items:center;justify-content:center;gap:40px;border-top:1px solid rgba(212,175,55,.2);}
+  .brand-strip span{color:var(--gold-300);font-size:13px;letter-spacing:1px;opacity:.9;}
+  .brand-strip b{font-family:Georgia,serif;color:#fff;font-size:15px;margin:0 4px;}
 
   /* ---- Value props ---- */
   .values{flex:none;background:var(--cream-50);padding:34px 56px 8px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
@@ -67,20 +68,28 @@
   .vcard h4{font-size:14.5px;font-family:Georgia,serif;color:var(--navy-900);margin-bottom:6px;line-height:1.3;}
   .vcard p{font-size:11.5px;color:var(--ink-500);line-height:1.5;}
 
-  /* ---- Packages ---- */
+  /* ---- Gift audiences ---- */
   .pkg-section{flex:none;padding:30px 56px 0;}
   .pkg-title{text-align:center;margin-bottom:18px;}
   .pkg-title .tag{color:var(--red-600);font-size:12px;letter-spacing:2px;font-weight:700;}
   .pkg-title h2{font-family:Georgia,serif;font-size:26px;color:var(--navy-900);margin-top:4px;}
-  .pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-  .pkg-card{border-radius:14px;padding:18px 16px;text-align:center;background:linear-gradient(180deg,var(--terracotta-700),#6e3a1c);
+  .pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:22px;}
+  .pkg-card{border-radius:14px;padding:20px 16px;text-align:center;background:linear-gradient(180deg,var(--terracotta-700),#6e3a1c);
     border:1px solid rgba(232,199,102,.35);color:var(--cream-100);position:relative;}
-  .pkg-card.mid{border-color:var(--gold-400);background:linear-gradient(180deg,#a85c2c,#7a3d17);}
-  .pkg-card .ribbon{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--red-600);color:#fff;
-    font-size:10px;letter-spacing:1px;padding:4px 12px;border-radius:999px;}
+  .pkg-card .picon{font-size:26px;margin-bottom:8px;}
   .pkg-card h3{font-family:Georgia,serif;font-size:17px;color:var(--gold-300);margin-bottom:6px;}
-  .pkg-card p{font-size:11px;opacity:.85;line-height:1.5;margin-bottom:8px;min-height:48px;}
-  .pkg-card .qty{font-size:12px;color:var(--gold-400);font-weight:700;}
+  .pkg-card p{font-size:11.5px;opacity:.85;line-height:1.5;margin:0;}
+  .policy-banner{
+    background:rgba(15,27,51,.9);border:1px solid var(--gold-500);border-radius:14px;
+    padding:20px 26px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:space-between;
+  }
+  .policy-banner .txt b{display:block;font-family:Georgia,serif;font-size:17px;color:var(--gold-300);margin-bottom:4px;}
+  .policy-banner .txt span{font-size:12.5px;color:var(--cream-100);opacity:.8;}
+  .policy-banner .badges{display:flex;gap:10px;flex-wrap:wrap;}
+  .policy-banner .badges span{
+    background:rgba(212,175,55,.12);border:1px solid var(--gold-500);color:var(--red-600);
+    padding:7px 14px;border-radius:999px;font-size:11.5px;white-space:nowrap;font-weight:600;
+  }
 
   /* ---- Process ---- */
   .process{flex:none;padding:30px 56px 0;display:flex;flex-direction:column;}
@@ -98,9 +107,9 @@
   /* ---- CTA footer ---- */
   .cta{flex:none;background:linear-gradient(180deg,var(--navy-900),var(--navy-950));color:#fff;padding:30px 56px;
     display:flex;align-items:center;justify-content:space-between;margin-top:38px;}
-  .cta .left b{font-family:Georgia,serif;font-size:20px;color:var(--gold-300);display:block;margin-bottom:4px;}
-  .cta .left span{font-size:13px;opacity:.8;}
-  .cta .right{display:flex;gap:20px;font-size:13.5px;}
+  .cta .left b{font-family:Georgia,serif;font-size:19px;color:var(--gold-300);display:block;margin-bottom:4px;}
+  .cta .left span{font-size:12.5px;opacity:.8;}
+  .cta .right{display:flex;gap:20px;font-size:13px;}
   .cta .right div b{color:var(--gold-400);}
 </style>
 </head>
@@ -108,40 +117,58 @@
 <div class="canvas">
   <div class="head">
     <div class="brand">
-      <div class="seal"><span>喜</span></div>
-      <div><b>HỢP TÂM</b><small>BÁNH TRUNG THU</small></div>
+      <div class="seal">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="17" r="10" fill="#e8c766"/>
+          <circle cx="76" cy="17" r="10" fill="#e8c766"/>
+          <path d="M50,88 C22,64 6,45 6,28 C6,12 20,2 32,9 C40,14 46,21 50,29 C54,21 60,14 68,9 C80,2 94,12 94,28 C94,45 78,64 50,88 Z" fill="#e8c766"/>
+        </svg>
+      </div>
+      <div><b>HỢP TÂM</b><small>QUÀ TẶNG TRUNG THU</small></div>
     </div>
-    <div class="kicker">🎁 GIẢI PHÁP QUÀ TẶNG DOANH NGHIỆP</div>
+    <div class="slogan">TRAO TRỌN THÀNH Ý — GẮN KẾT BỀN LÂU</div>
+    <div class="kicker">GIẢI PHÁP QUÀ TẶNG DOANH NGHIỆP</div>
     <h1>Trung Thu đoàn viên,<br><em>gắn kết thương hiệu của bạn</em></h1>
-    <p>HỢP TÂM đồng hành cùng doanh nghiệp trong mùa Trung Thu — từ quà tặng nhân viên đến biếu tặng đối tác, mỗi hộp bánh là một lời tri ân trọn vẹn, đậm dấu ấn thương hiệu.</p>
+    <p>HỢP TÂM — nhà phân phối bánh Trung Thu cao cấp từ Givral, KIDO's Bakery và Thọ Phát, mang đến giải pháp quà tặng trọn vẹn cho đối tác, khách hàng và nhân viên doanh nghiệp.</p>
     <div class="mooncake-deco"></div>
   </div>
 
+  <div class="brand-strip">
+    <span>Phân phối chính thức:</span>
+    <b>Givral</b><span>·</span><b>KIDO's Bakery</b><span>·</span><b>Thọ Phát</b>
+  </div>
+
   <div class="values">
-    <div class="vcard"><div class="vicon">📦</div><h4>Đặt số lượng lớn</h4><p>Giá sỉ ưu đãi theo số lượng đặt hàng</p></div>
+    <div class="vcard"><div class="vicon">📦</div><h4>Đặt số lượng lớn</h4><p>Báo giá ưu đãi theo số lượng đặt</p></div>
     <div class="vcard"><div class="vicon">🏷️</div><h4>In logo thương hiệu</h4><p>Tùy chỉnh hộp quà theo nhận diện công ty</p></div>
     <div class="vcard"><div class="vicon">✏️</div><h4>Thiết kế theo yêu cầu</h4><p>Tư vấn mẫu hộp và thiệp riêng cho từng đối tác</p></div>
     <div class="vcard"><div class="vicon">🧾</div><h4>Xuất hóa đơn VAT</h4><p>Giao hàng đúng hẹn toàn quốc, chứng từ đầy đủ</p></div>
   </div>
 
   <div class="pkg-section">
-    <div class="pkg-title"><div class="tag">GÓI QUÀ TẶNG</div><h2>Lựa chọn phù hợp mọi ngân sách</h2></div>
+    <div class="pkg-title"><div class="tag">GIẢI PHÁP QUÀ TẶNG</div><h2>Phù hợp từng đối tượng</h2></div>
     <div class="pkg-grid">
       <div class="pkg-card">
-        <h3>Gói Tri Ân</h3>
-        <p>Hộp 2 bánh, bao bì tiêu chuẩn — phù hợp tặng toàn thể nhân viên.</p>
-        <div class="qty">Từ 50 hộp trở lên</div>
-      </div>
-      <div class="pkg-card mid">
-        <div class="ribbon">Phổ biến nhất</div>
-        <h3>Gói Đối Tác</h3>
-        <p>Hộp 4 bánh cao cấp, in logo doanh nghiệp — dành tặng khách hàng, đối tác.</p>
-        <div class="qty">Từ 30 hộp trở lên</div>
+        <div class="picon">🤝</div>
+        <h3>Quà tặng Đối tác</h3>
+        <p>Gắn kết hợp tác lâu dài qua những hộp quà trang trọng, đúng chuẩn nghi lễ doanh nghiệp.</p>
       </div>
       <div class="pkg-card">
-        <h3>Gói Thượng Hạng</h3>
-        <p>Hộp gỗ 6 bánh, thiệp riêng theo yêu cầu — dành biếu lãnh đạo, VIP.</p>
-        <div class="qty">Từ 10 hộp trở lên</div>
+        <div class="picon">💼</div>
+        <h3>Quà tặng Khách hàng</h3>
+        <p>Tri ân khách hàng thân thiết, nâng tầm trải nghiệm thương hiệu mùa lễ đoàn viên.</p>
+      </div>
+      <div class="pkg-card">
+        <div class="picon">👥</div>
+        <h3>Quà tặng Nhân viên</h3>
+        <p>Lan tỏa yêu thương nội bộ, thể hiện sự quan tâm đến từng thành viên công ty.</p>
+      </div>
+    </div>
+    <div class="policy-banner">
+      <div class="txt"><b>Đặc quyền riêng cho Doanh nghiệp</b><span>In ấn theo nhận diện thương hiệu của bạn — chuyên nghiệp và khác biệt</span></div>
+      <div class="badges">
+        <span>IN LOGO LÊN MẶT BÁNH</span>
+        <span>IN LOGO LÊN HỘP QUÀ</span>
       </div>
     </div>
   </div>
@@ -157,10 +184,10 @@
   </div>
 
   <div class="cta">
-    <div class="left"><b>Liên hệ báo giá cho doanh nghiệp của bạn</b><span>Ưu đãi đặc biệt cho đơn hàng số lượng lớn</span></div>
+    <div class="left"><b>Gửi yêu cầu báo giá theo số lượng</b><span>Không phải bán lẻ — dành riêng cho khách hàng doanh nghiệp</span></div>
     <div class="right">
       <div>📞 <b>Hotline:</b> 0909 xxx xxx</div>
-      <div>✉️ <b>Email:</b> hoptam.b2b@banhtrungthu.vn</div>
+      <div>✉️ <b>Email:</b> hoptam.b2b@quatangtrungthu.vn</div>
     </div>
   </div>
 </div>

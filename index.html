@@ -169,9 +169,13 @@
   .brand-card p.desc{font-size:13.5px;color:var(--ink-500);line-height:1.6;margin-bottom:16px;}
   .brand-groups{list-style:none;padding:0;margin:0;}
   .brand-groups li{
-    font-size:13px;color:var(--ink-700);padding:8px 0;border-top:1px solid var(--cream-100);
+    display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+    font-size:13px;color:var(--ink-700);padding:9px 0;border-top:1px solid var(--cream-100);
   }
   .brand-groups li:first-child{border-top:none;}
+  .brand-groups li .name{flex:1;}
+  .brand-groups li .price{font-weight:700;color:var(--red-600);white-space:nowrap;font-size:12.5px;}
+  .brand-groups li .price.tbd{color:var(--ink-500);font-weight:400;font-style:italic;}
 
   /* ---------- B2B solutions ---------- */
   .b2b{background:linear-gradient(180deg,var(--terracotta-700),#6e3a1c);color:var(--cream-100);}
@@ -284,7 +288,7 @@
       <a href="#b2b">Giải pháp doanh nghiệp</a>
       <a href="#why">Vì sao chọn Hợp Tâm</a>
       <a href="#about">Về chúng tôi</a>
-      <a href="#order" class="nav-cta">Liên hệ đặt hàng</a>
+      <a href="#order" class="nav-cta">Nhận báo giá</a>
     </div>
   </div>
 </nav>
@@ -321,9 +325,9 @@
 <section class="brands" id="brands">
   <div class="wrap">
     <div class="sec-head">
-      <div class="sec-tag">Thương hiệu phân phối</div>
+      <div class="sec-tag">Nhóm sản phẩm &amp; bảng giá</div>
       <h2>Ba thương hiệu bánh Trung Thu uy tín</h2>
-      <p>HỢP TÂM tuyển chọn và phân phối các dòng bánh Trung Thu cao cấp được tin dùng, phù hợp mọi nhu cầu quà tặng của doanh nghiệp.</p>
+      <p>HỢP TÂM tuyển chọn và phân phối các dòng bánh Trung Thu cao cấp được tin dùng, phù hợp mọi nhu cầu quà tặng của doanh nghiệp. Giá tham khảo theo hạng mục — liên hệ để nhận báo giá chính xác theo số lượng.</p>
     </div>
     <div class="brand-grid">
       <div class="brand-card">
@@ -331,9 +335,10 @@
         <div class="brand-since">SINCE 1950</div>
         <p class="desc">Thương hiệu bánh lâu đời, nguyên liệu cao cấp, thiết kế hộp quà sang trọng theo mùa.</p>
         <ul class="brand-groups">
-          <li>Hộp 4 bánh</li>
-          <li>Hộp 6 bánh</li>
-          <li>Hộp cao cấp lá phong</li>
+          <li><span class="name">Hộp 4 bánh nhỏ</span><span class="price tbd">Liên hệ báo giá</span></li>
+          <li><span class="name">Hộp 4 bánh</span><span class="price tbd">Liên hệ báo giá</span></li>
+          <li><span class="name">Hộp 6 bánh</span><span class="price tbd">Liên hệ báo giá</span></li>
+          <li><span class="name">Hộp cao cấp lá phong</span><span class="price tbd">Liên hệ báo giá</span></li>
         </ul>
       </div>
       <div class="brand-card">
@@ -341,11 +346,12 @@
         <div class="brand-since">PREMIUM MOONCAKE</div>
         <p class="desc">Dòng bánh cao cấp với nhân xốt độc đáo, thiết kế hộp quà mang phong cách hiện đại, sang trọng.</p>
         <ul class="brand-groups">
-          <li>Mỹ Vị Cát Tường</li>
-          <li>Mỹ Vị An Khang</li>
-          <li>Mỹ Vị Kim Cương &amp; Ngọc Bích</li>
-          <li>Mỹ Vị Như Ý &amp; Thịnh Vượng</li>
-          <li>Mỹ Vị Lava</li>
+          <li><span class="name">Mỹ Vị Lava (3 bánh 80g)</span><span class="price">300.000đ</span></li>
+          <li><span class="name">Mỹ Vị An Khang (4 bánh 150g)</span><span class="price">500.000đ</span></li>
+          <li><span class="name">Mỹ Vị Cát Tường (4 bánh 150g)</span><span class="price">650.000đ</span></li>
+          <li><span class="name">Mỹ Vị Thịnh Vượng (4 bánh 210g+trà)</span><span class="price">800.000đ</span></li>
+          <li><span class="name">Mỹ Vị Như Ý (4 bánh 210g+trà)</span><span class="price">1.000.000đ</span></li>
+          <li><span class="name">Mỹ Vị Kim Cương/Ngọc Bích (6 bánh+trà)</span><span class="price">1.300.000đ</span></li>
         </ul>
       </div>
       <div class="brand-card">
@@ -353,9 +359,9 @@
         <div class="brand-since">HƯƠNG VỊ TRUYỀN THỐNG</div>
         <p class="desc">Bánh Trung Thu truyền thống được yêu thích nhiều năm, đa dạng hộp quà tặng phổ thông đến cao cấp.</p>
         <ul class="brand-groups">
-          <li>Hộp quà truyền thống</li>
-          <li>Hộp quà cao cấp</li>
-          <li>Bánh dẻo &amp; bánh nướng thập cẩm</li>
+          <li><span class="name">Hộp quà truyền thống</span><span class="price tbd">Liên hệ báo giá</span></li>
+          <li><span class="name">Hộp quà cao cấp</span><span class="price tbd">Liên hệ báo giá</span></li>
+          <li><span class="name">Bánh dẻo &amp; bánh nướng thập cẩm</span><span class="price tbd">Liên hệ báo giá</span></li>
         </ul>
       </div>
     </div>
@@ -459,8 +465,8 @@
   <div class="wrap order-inner">
     <div>
       <div class="sec-tag" style="color:var(--gold-400)">Liên hệ</div>
-      <h2>Nhận tư vấn quà tặng doanh nghiệp</h2>
-      <p>Điền thông tin bên dưới, đội ngũ HỢP TÂM sẽ liên hệ tư vấn giải pháp quà tặng phù hợp trong vòng 24 giờ.</p>
+      <h2>Gửi yêu cầu báo giá theo số lượng</h2>
+      <p>HỢP TÂM phục vụ khách hàng doanh nghiệp — vui lòng cho biết số lượng và yêu cầu, đội ngũ chúng tôi sẽ gửi báo giá phù hợp trong vòng 24 giờ. Đây không phải trang bán lẻ trực tuyến.</p>
       <ul class="order-info">
         <li>📍 <span><b>Văn phòng:</b> 123 Đường Trăng Rằm, Quận 1, TP. Hồ Chí Minh</span></li>
         <li>📞 <span><b>Hotline:</b> 0909 xxx xxx</span></li>
@@ -483,20 +489,26 @@
         <label>Công ty / Doanh nghiệp</label>
         <input type="text" name="company" placeholder="Tên công ty" />
       </div>
-      <div class="field">
-        <label>Nhu cầu quà tặng</label>
-        <select name="need">
-          <option>Quà tặng Đối tác</option>
-          <option>Quà tặng Khách hàng</option>
-          <option>Quà tặng Nhân viên</option>
-        </select>
+      <div class="row2">
+        <div class="field">
+          <label>Nhu cầu quà tặng</label>
+          <select name="need">
+            <option>Quà tặng Đối tác</option>
+            <option>Quà tặng Khách hàng</option>
+            <option>Quà tặng Nhân viên</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Số lượng dự kiến</label>
+          <input type="text" name="quantity" placeholder="Ví dụ: 200 hộp" />
+        </div>
       </div>
       <div class="field">
-        <label>Ghi chú</label>
-        <textarea name="note" placeholder="Số lượng dự kiến, yêu cầu in logo, ngân sách..."></textarea>
+        <label>Yêu cầu thêm</label>
+        <textarea name="note" placeholder="Yêu cầu in logo, thương hiệu quan tâm, ngân sách..."></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Gửi yêu cầu tư vấn</button>
-      <div class="form-msg" id="formMsg">✓ Cảm ơn bạn! HỢP TÂM đã nhận được yêu cầu và sẽ liên hệ tư vấn sớm nhất.</div>
+      <button type="submit" class="btn btn-primary">Gửi yêu cầu báo giá</button>
+      <div class="form-msg" id="formMsg">✓ Cảm ơn bạn! HỢP TÂM đã nhận được yêu cầu và sẽ gửi báo giá sớm nhất.</div>
     </form>
   </div>
 </section>
