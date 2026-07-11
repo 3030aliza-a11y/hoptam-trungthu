@@ -291,6 +291,7 @@
   .order-form .btn{width:100%;margin-top:6px;}
   .form-msg{margin-top:14px;font-size:13.5px;color:var(--gold-400);display:none;}
   .form-msg.show{display:block;}
+  .form-msg.error{color:#f28b82;}
 
   /* ---------- Footer ---------- */
   footer{background:var(--navy-950);color:var(--cream-100);padding:44px 0 22px;border-top:1px solid rgba(212,175,55,.15);}
@@ -579,6 +580,9 @@
       </ul>
     </div>
     <form class="order-form" id="orderForm">
+      <input type="hidden" name="_subject" value="Yêu cầu báo giá mới từ website HỢP TÂM" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
       <div class="row2">
         <div class="field">
           <label>Họ và tên</label>
@@ -677,8 +681,33 @@
   });
   document.getElementById('orderForm').addEventListener('submit', function (e) {
     e.preventDefault();
-    document.getElementById('formMsg').classList.add('show');
-    this.reset();
+    var form = this;
+    var msg = document.getElementById('formMsg');
+    var btn = form.querySelector('button[type="submit"]');
+    var originalBtnText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Đang gửi...';
+    msg.classList.remove('show', 'error');
+
+    fetch('https://formsubmit.co/ajax/anthu2030@gmail.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    })
+      .then(function (res) { if (!res.ok) throw new Error('send failed'); return res.json(); })
+      .then(function () {
+        msg.textContent = '✓ Cảm ơn bạn! HỢP TÂM đã nhận được yêu cầu và sẽ gửi báo giá sớm nhất.';
+        msg.classList.add('show');
+        form.reset();
+      })
+      .catch(function () {
+        msg.textContent = '⚠ Gửi không thành công. Vui lòng thử lại hoặc liên hệ trực tiếp qua Zalo/Hotline 0903 887 366.';
+        msg.classList.add('show', 'error');
+      })
+      .finally(function () {
+        btn.disabled = false;
+        btn.textContent = originalBtnText;
+      });
   });
 
   (function () {
