@@ -286,6 +286,9 @@
   }
   .field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.4);}
   .field textarea{resize:vertical;min-height:70px;}
+  .check-row{display:flex;flex-wrap:wrap;gap:14px;padding:4px 0;}
+  .check-row label{display:flex;align-items:center;gap:6px;font-size:13.5px;color:var(--cream-100);width:auto;}
+  .check-row input[type="checkbox"]{width:auto;accent-color:var(--gold-500);}
   .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
   @media (max-width:480px){.row2{grid-template-columns:1fr;}}
   .order-form .btn{width:100%;margin-top:6px;}
@@ -593,9 +596,15 @@
           <input type="tel" name="phone" placeholder="09xx xxx xxx" required pattern="[0-9+ ]{8,15}" />
         </div>
       </div>
-      <div class="field">
-        <label>Công ty / Doanh nghiệp</label>
-        <input type="text" name="company" placeholder="Tên công ty" />
+      <div class="row2">
+        <div class="field">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="ban@congty.com" />
+        </div>
+        <div class="field">
+          <label>Công ty / Doanh nghiệp</label>
+          <input type="text" name="company" placeholder="Tên công ty" />
+        </div>
       </div>
       <div class="row2">
         <div class="field">
@@ -612,8 +621,17 @@
         </div>
       </div>
       <div class="field">
+        <label>Thương hiệu quan tâm</label>
+        <div class="check-row">
+          <label><input type="checkbox" name="brand" value="GIVRAL" /> Givral</label>
+          <label><input type="checkbox" name="brand" value="KIDO" /> KIDO's Bakery</label>
+          <label><input type="checkbox" name="brand" value="THỌ PHÁT" /> Thọ Phát</label>
+          <label><input type="checkbox" name="brand" value="KHÁC" /> Khác</label>
+        </div>
+      </div>
+      <div class="field">
         <label>Yêu cầu thêm</label>
-        <textarea name="note" placeholder="Yêu cầu in logo, thương hiệu quan tâm, ngân sách..."></textarea>
+        <textarea name="note" placeholder="Yêu cầu in logo, ngân sách, ghi chú khác..."></textarea>
       </div>
       <button type="submit" class="btn btn-primary">Gửi yêu cầu báo giá</button>
       <div class="form-msg" id="formMsg">✓ Cảm ơn bạn! HỢP TÂM đã nhận được yêu cầu và sẽ gửi báo giá sớm nhất.</div>
@@ -672,6 +690,18 @@
 </div>
 <div class="chat-fab" id="chatFab" aria-label="Mở chat tư vấn">💬</div>
 
+<iframe name="hidden_iframe" id="hiddenGFormFrame" style="display:none;" title="gform-proxy"></iframe>
+<form id="gform" action="https://docs.google.com/forms/d/e/1FAIpQLSdg_wict5lfkNUI0B1blyAX5G0irJKi_lgosxMZIT1qQpU1gQ/formResponse" method="POST" target="hidden_iframe" style="display:none;">
+  <input type="text" name="entry.27757093" id="gf_name" />
+  <input type="text" name="entry.2017796895" id="gf_email" />
+  <input type="text" name="entry.1669028569" id="gf_phone" />
+  <input type="text" name="entry.1767441603" id="gf_company" />
+  <input type="text" name="entry.33408007" id="gf_need" />
+  <input type="text" name="entry.325897309" id="gf_quantity" />
+  <input type="text" name="entry.1686428334" id="gf_note" />
+  <span id="gf_brand_wrap"></span>
+</form>
+
 <script>
   document.getElementById('navToggle').addEventListener('click', function () {
     document.getElementById('navLinks').classList.toggle('open');
@@ -688,6 +718,29 @@
     btn.disabled = true;
     btn.textContent = 'Đang gửi...';
     msg.classList.remove('show', 'error');
+
+    // Gửi song song sang Google Form (ghi vào Google Sheet của HỢP TÂM) qua iframe ẩn,
+    // tách biệt hoàn toàn với FormSubmit để không phụ thuộc 1 kênh duy nhất.
+    try {
+      var fd = new FormData(form);
+      document.getElementById('gf_name').value = fd.get('name') || '';
+      document.getElementById('gf_email').value = fd.get('email') || '';
+      document.getElementById('gf_phone').value = fd.get('phone') || '';
+      document.getElementById('gf_company').value = fd.get('company') || '';
+      document.getElementById('gf_need').value = fd.get('need') || '';
+      document.getElementById('gf_quantity').value = fd.get('quantity') || '';
+      document.getElementById('gf_note').value = fd.get('note') || '';
+      var brandWrap = document.getElementById('gf_brand_wrap');
+      brandWrap.innerHTML = '';
+      fd.getAll('brand').forEach(function (v) {
+        var inp = document.createElement('input');
+        inp.type = 'hidden';
+        inp.name = 'entry.1040690903';
+        inp.value = v;
+        brandWrap.appendChild(inp);
+      });
+      document.getElementById('gform').submit();
+    } catch (gerr) { /* Google Form là kênh dự phòng, không chặn luồng chính nếu lỗi */ }
 
     fetch('https://formsubmit.co/ajax/anthu2030@gmail.com', {
       method: 'POST',
